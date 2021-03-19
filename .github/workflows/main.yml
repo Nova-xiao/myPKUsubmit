@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+name: myPKUsubmit
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: "25 2 * * *"
+    - cron: "45 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yousiki/PKUAutoSubmit-action@master
+        with:
+          username: ${{ 1700012876 }}
+          password: ${{ Lostsir51555 }}
+          reason: ${{ 科研 }}
+          wechat: "False"
+          sckey: ${{ secrets.sckey }}
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
