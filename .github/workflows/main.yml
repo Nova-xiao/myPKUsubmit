@@ -1,5 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-name: myPKUsubmit
+name: PKUAutoSubmit
 
 on:
   push:
@@ -15,11 +14,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: yousiki/PKUAutoSubmit-action@master
+      - uses: Nova-xiao/PKUAutoSubmit-action@master
         with:
-          username: ${{ 1700012876 }}
-          password: ${{ Lostsir51555 }}
-          reason: ${{ 科研 }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          reason: ${{ secrets.reason }}
           wechat: "False"
           sckey: ${{ secrets.sckey }}
 
